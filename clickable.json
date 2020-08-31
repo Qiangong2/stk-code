@@ -1,0 +1,40 @@
+{
+  "clickable_minimum_required": "6.12.2",
+  "builder": "cmake",
+  "kill": "STK",
+  "arch": "arm64",
+  "dependencies_target": [
+       "libsdl2-dev",
+       "libcurl4-openssl-dev",
+       "libenet-dev",
+       "libfreetype6-dev",
+       "libharfbuzz-dev",
+       "libfribidi-dev",
+       "libgles2-mesa-dev",
+       "libjpeg-dev",
+       "libogg-dev",
+       "libopenal-dev",
+       "libpng-dev",
+       "libssl-dev",
+       "libvorbis-dev",
+       "nettle-dev",
+       "zlib1g-dev",
+       "libfreetype6",
+       "libbluetooth-dev"
+  ],
+  "dependencies_host": [
+       "pkg-config"
+  ],
+  "image_setup": {
+      "run": [
+      ]
+  },
+  "build_args": [
+      "..",
+      "-DMOBILE_STK=ON",
+      "-DUSE_GLES2=ON",
+      "-DNO_IRR_COMPILE_WITH_OPENGL_=ON",
+      "-D_IRR_COMPILE_WITH_WAYLAND_DEVICE_=ON",
+      "-DBUILD_RECORDER=off"
+  ]
+}
