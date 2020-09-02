@@ -19,7 +19,7 @@
        "libvorbis-dev",
        "nettle-dev",
        "zlib1g-dev",
-       "libfreetype6",
+       "libfreetype6-dev",
        "libbluetooth-dev"
   ],
   "dependencies_host": [
@@ -29,12 +29,12 @@
       "run": [
       ]
   },
+  "install_lib": [
+      "/usr/lib/aarch64-linux-gnu/libfreetype.so"
+],
   "build_args": [
-      "..",
-      "-DMOBILE_STK=ON",
       "-DUSE_GLES2=ON",
       "-DNO_IRR_COMPILE_WITH_OPENGL_=ON",
-      "-D_IRR_COMPILE_WITH_WAYLAND_DEVICE_=ON",
       "-DBUILD_RECORDER=off"
   ]
 }
