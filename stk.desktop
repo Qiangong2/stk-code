@@ -1,0 +1,5 @@
+[Desktop Entry]
+Name=@APP_TITLE@
+exec=stk %u
+Icon=android/icon.png
+type=Game

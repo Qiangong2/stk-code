@@ -1,8 +1,7 @@
 {
   "clickable_minimum_required": "6.12.2",
   "builder": "cmake",
-  "kill": "STK",
-  "arch": "arm64",
+  "kill": "stk",
   "dependencies_target": [
        "libsdl2-dev",
        "libcurl4-openssl-dev",
@@ -23,19 +22,23 @@
        "libfreetype6-dev"
   ],
   "dependencies_host": [
-       "pkg-config"
+       "pkg-config",
+       "cmake-data"
   ],
   "image_setup": {
       "run": [
       ]
   },
-  "install_lib": [
-],
+  "install_data": {
+      "${ROOT}/manifest.json": "${INSTALL_DIR}",
+      "${ROOT}/stk.apparmor": "${INSTALL_DIR}",
+      "${ROOT}/stk.desktop": "${INSTALL_DIR}",
+      "${ROOT}/android/icon.png": "${INSTALL_DIR}"
+},
   "build_args": [
+      "-DPKG_CONFIG_EXECUTABLE=/usr/bin/pkg-config",
       "-DUSE_GLES2=ON",
       "-DNO_IRR_COMPILE_WITH_OPENGL_=ON",
-      "-DBUILD_RECORDER=off",
-      "-DFREETYPE_INCLUDE_DIRS=/usr/include/${ARCH_TRIPLET}/freetype2",
-      "-DFREETYPE_LIBRARIES=/usr/lib/${ARCH_TRIPLET}/freetype.so"
+      "-DBUILD_RECORDER=off"
   ]
 }

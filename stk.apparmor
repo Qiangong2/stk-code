@@ -1,0 +1,9 @@
+{
+    "policy_groups": [
+        "audio",
+        "keep-display-on",
+        "networking",
+        "content_exchange"
+],
+    "policy_version": 16.04
+}
